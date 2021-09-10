@@ -1,0 +1,214 @@
+@import "../../../scss/variables.scss";
+
+.section-landing{
+    position: relative;
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    video {
+        object-fit: cover;
+        width: 100vw;
+        height: calc(100vh - 75px);
+        position: absolute;
+        top: 75px;
+        left: 0;
+        background-color: $white;
+    }
+
+    .container{
+        position: absolute;
+    }
+}
+
+.section-core-products{
+    min-height: 30rem;
+
+    .same-height{
+        height: 100%;
+    }
+
+    .card{
+        color: $gray-600;
+        transition: all .25s ease-in-out;
+        cursor: default;
+    }
+
+    .card:hover{
+        transform: scale(1.06);
+        box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+        
+        h4, p{
+            color: #2d2d2d;
+        }
+    
+    }
+}
+
+.section-top-features{
+    // background-image: linear-gradient(158deg, rgba($blue,.8) 0%, rgba($blue,.8) 35%, rgba($blue,.7) 100%),
+    // url("../../../assets/bg-abstract-2.jpg");
+    // background-color: $blue;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+
+    .big {
+        height: 3rem;
+        width: 3rem;
+    }
+
+        
+    /*
+    Flip card
+    */
+    .card-flip {
+
+        background: none;
+        border: none;
+        height: 10rem;
+        position: relative;
+    
+        .card {
+            backface-visibility: hidden;
+            transition: transform 400ms;
+            transition-timing-function: linear;
+            width: 100%;
+            height: 10rem;
+            margin: 0;
+            cursor: pointer;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+        }
+    
+        .card:first-of-type {
+            transform: rotateY(0deg);
+        }
+    
+        .card:last-of-type {
+            transform: rotateY(180deg);
+            // Put this in face with the larger content
+            position: absolute;
+            top: 0;
+            display: flex;
+            background-color: $blue !important;
+            color: $white !important;
+        }
+    
+        &:hover {
+            .card:first-of-type  {
+                transform: rotateY(-180deg);
+            }
+            .card:last-of-type {
+                transform: rotateY(0deg);
+            }
+        }    
+    }
+}
+
+.section-top-features:after{
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    background-image: url("../../../assets/rounded-bg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 247px;
+    width: 100%;
+}
+
+.section-our-world{
+    min-height: 30rem;
+    .big {
+        height: 2.5rem;
+        width: 2.5rem;
+    }
+
+    .clients-counter{
+        min-height: 8rem;
+        cursor: default;
+        color: #444444;
+        transition: .2s all ease-in-out;
+    }
+
+    .clients-counter:hover{
+        background-color: $blue;
+        color: $white !important;
+    }
+}
+
+.section-our-clients{
+    min-height: 30rem;
+
+    background-image: url("../../../assets/our-customers.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    .avatar{
+        height: 4.5rem;
+        width: 4.5rem;
+    }
+}
+
+.section-contact{
+    min-height: 42rem;
+}
+
+.section-contact-details{
+    
+    .big {
+        height: 2rem;
+        width: 2rem;
+    }
+
+    .card{
+        color: #444444;
+        cursor: default;
+
+        i-feather{
+            color: $blue;
+        }
+    }
+
+    .card:hover{
+        animation-name: hoverPop;
+        animation-duration: .4s;
+        // background-color: $orange !important;
+        // color: $white !important;
+        
+        // i-feather{
+        //     color: $white;
+        // }
+    }
+}
+
+/* Animations */
+@keyframes hoverPop {
+    0%, 100% {
+        transform: scale(1);
+    }
+    33% {
+        transform: scale(1.08);
+    }
+    66% {
+        transform: scale(.85);
+    }
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+    .section-core-products{
+        min-height: 30rem;
+    
+        .same-height{
+            height: 100%;
+        }
+    }
+}

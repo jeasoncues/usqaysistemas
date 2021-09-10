@@ -1,0 +1,160 @@
+<nav class="navbar navbar-expand-lg navbar-light" [ngClass]="{'fixed-top' : !sticky, 
+'sticky-top' : sticky, 
+'bg-white shadow w3-animate-opacity': scrollTop >= limitScroll || isMenuOpen, 
+'bg-transparent' : scrollTop < limitScroll && !isMenuOpen}">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img *ngIf="!whiteLogo || scrollTop >= limitScroll || isMenuOpen" src="assets/svg/logo.svg" alt="Logo" height="50">
+      <img *ngIf="whiteLogo && scrollTop < limitScroll && !isMenuOpen" src="assets/svg/logo-negativo.svg" alt="Logo" height="50">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" (click)="toggleMenu()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+        <!-- <li class="nav-item mx-md-3">
+          <a class="nav-link font-weight-bold" [ngClass]="{'text-white': scrollTop < limitScroll && !itemsBlue && !isMenuOpen, 'text-primary' : scrollTop >= limitScroll || itemsBlue || isMenuOpen}" routerLinkActive="text-subrayado" routerLink="/product/restaurantes">Restaurantes</a>
+        </li>
+        <li class="nav-item mx-md-3">
+          <a class="nav-link font-weight-bold" [ngClass]="{'text-white': scrollTop < limitScroll && !itemsBlue && !isMenuOpen, 'text-primary' : scrollTop >= limitScroll || itemsBlue || isMenuOpen}" routerLinkActive="text-subrayado" routerLink="/product/pos">Pos</a>
+        </li> -->
+       
+        <!-- <li class="nav-item mx-md-3">
+          <a class="nav-link font-weight-bold" [ngClass]="{'text-white': scrollTop < limitScroll && !itemsBlue && !isMenuOpen, 'text-primary' : scrollTop >= limitScroll || itemsBlue || isMenuOpen}" routerLinkActive="text-subrayado"
+          routerLink="/about">Nosotros</a>
+
+        </li> -->
+
+        <li class="nav-item mx-md-3 dropdown">
+          <a class="nav-link font-weight-bold dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" [ngClass]="{'text-white': scrollTop < limitScroll && !itemsBlue && !isMenuOpen, 'text-primary' : scrollTop >= limitScroll || itemsBlue || isMenuOpen}">
+            Empresa
+          </a>
+          <div class="dropdown-menu soporte-menu px-4 py-2" aria-labelledby="navbarDropdown">
+            <div class="text-center">
+              <div class="pb-1 text-left">
+                <a class="dropdown-item"  routerLink="">
+                  <i class="fa fa-clipboard text-secondary"></i> ¿Quiénes somos?
+                </a>
+                <hr>
+                <a class="dropdown-item"  routerLink="">
+                  <i class="fa fa-clipboard text-secondary"></i> Misión
+                </a>
+                <hr>
+                <a class="dropdown-item"  routerLink="">
+                  <i class="fa fa-clipboard text-secondary"></i> Visión
+                </a>
+                <hr>
+                <a class="dropdown-item" routerLink="">
+                  <i class="far fa-users text-secondary"></i> Clientes
+                </a>
+                <hr>
+                <a class="dropdown-item"  routerLink="">
+                  <i class="fa fa-clipboard text-secondary"></i> Testimonios
+                </a>
+                <hr>
+                <a class="dropdown-item"  routerLink="">
+                  <i class="far fa-users text-secondary"></i> Equipo
+                </a>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="nav-item mx-md-3 dropdown">
+          <a class="nav-link font-weight-bold dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" [ngClass]="{'text-white': scrollTop < limitScroll && !itemsBlue && !isMenuOpen, 'text-primary' : scrollTop >= limitScroll || itemsBlue || isMenuOpen}">
+            Productos
+          </a>
+          <div class="dropdown-menu soporte-menu px-4 py-2" aria-labelledby="navbarDropdown">
+            <div class="text-center">
+              <div class="pb-1 text-left">
+                <a class="dropdown-item" routerLink="/product/restaurantes">
+                  <i class="fas fa-utensils-alt text-secondary"></i> Usqay Restaurante
+                </a>
+                <hr>
+                <a class="dropdown-item" routerLink="/product/pos">
+                  <i class="fas fa-cart-plus text-secondary"></i> Usqay POS
+                </a>
+                <hr>
+                <a class="dropdown-item" href="https://usqay.pse.pe/login" target="_blank">
+                  <i class="fas fa-book-open text-secondary"></i> Facturación Electronica
+                </a>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="nav-item mx-md-3">
+          <a class="nav-link font-weight-bold" [ngClass]="{'text-white': scrollTop < limitScroll && !itemsBlue && !isMenuOpen, 'text-primary' : scrollTop >= limitScroll || itemsBlue || isMenuOpen}" routerLinkActive="text-subrayado" routerLink="/contacto">Contacto</a>
+        </li>
+
+        <!-- <li class="nav-item mx-md-3">
+          <a class="nav-link font-weight-bold"  routerLinkActive="text-subrayado" href="https://soporte.sistemausqay.com" target="_blank">Soporte</a>
+        </li> -->
+        <li class="nav-item mx-md-3 dropdown">
+          <a class="nav-link font-weight-bold dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" [ngClass]="{'text-white': scrollTop < limitScroll && !itemsBlue && !isMenuOpen, 'text-primary' : scrollTop >= limitScroll || itemsBlue || isMenuOpen}">
+            Soporte
+          </a>
+          <div class="dropdown-menu soporte-menu px-4 py-2" aria-labelledby="navbarDropdown">
+
+            <div class="text-center">
+              <p>Hemos puesto a disposición un sistema de tickets ¡Pruébalo!</p>
+              <a mat-flat-button color="accent" class="shadow" href="https://soporte.sistemausqay.com" target="_blank">Tickets de Soporte</a>
+
+              <hr>
+              <div class="pb-1 text-left">
+                <a class="dropdown-item" href="tel:016429247" target="_blank">
+                  <i class="fa fa-phone text-secondary"></i> (01) 642 9247
+                </a>
+                <a class="dropdown-item" href="https://api.whatsapp.com/send?phone=51902147182" target="_blank">
+                  <i class="fab fa-whatsapp text-secondary"></i> (+51) 902 147 182
+                </a>
+                <a class="dropdown-item" href="https://api.whatsapp.com/send?phone=51900515383" target="_blank">
+                  <i class="fab fa-whatsapp text-secondary"></i> (+51) 900 515 383
+                </a>
+                <a class="dropdown-item" href="mailto:soporte@sistemausqay.com" target="_blank">
+                  <i class="fas fa-envelope text-secondary"></i> soporte@sistemausqay.com
+                </a>
+              </div>
+              <hr>
+              <div class="pb-1 text-left">
+                <a class="dropdown-item" href="https://drive.google.com/file/d/1cWKD73YP6egDQyGVBtejvL0lSanhOf9a/view" target="_blank">
+                  <i class="fa fa-clipboard text-secondary"></i> Manual de Restaurantes
+                </a>
+                <a class="dropdown-item" href="https://drive.google.com/file/d/1mMeoLa76hIpxafspKCVXVwUUiKvDk0dS/view" target="_blank">
+                  <i class="fa fa-clipboard text-secondary"></i> Manual de POS
+                </a>
+                
+              </div>
+              <hr>
+              <div class="pb-1 text-left">
+                <a class="dropdown-item" href="https://drive.google.com/file/d/1mMeoLa76hIpxafspKCVXVwUUiKvDk0dS/view" target="_blank">
+                  <i class="fa fa-question text-secondary"></i> Preguntas Frecuentes Restaurantes
+                </a>
+                <a class="dropdown-item" href="https://drive.google.com/file/d/1mMeoLa76hIpxafspKCVXVwUUiKvDk0dS/view" target="_blank">
+                  <i class="fa fa-question text-secondary"></i> Preguntas Frecuentes POS
+                </a>
+                
+              </div>
+            </div>
+          </div>
+          <!-- <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="https://soporte.sistemausqay.com" target="_blank">Tickets de Soporte</a></li>
+          </ul> -->
+        </li>
+        <li class="nav-item mx-md-3">
+          <a class="nav-link font-weight-bold" [ngClass]="{'text-white': scrollTop < limitScroll && !itemsBlue && !isMenuOpen, 'text-primary' : scrollTop >= limitScroll || itemsBlue || isMenuOpen}" routerLinkActive="text-subrayado" href="https://usqay.pse.pe/buscar" target="_blank"><i class="fa fa-search"></i> Comprobante</a>
+        </li>
+        <!-- <li class="nav-item mx-md-3">
+          <a class="nav-link font-weight-bold" [ngClass]="{'text-white': scrollTop < limitScroll && !itemsBlue && !isMenuOpen, 'text-primary' : scrollTop >= limitScroll || itemsBlue || isMenuOpen}" routerLinkActive="text-subrayado" routerLink="/cart">
+            <mat-icon matBadge="{{getCountCart()}}" matBadgeColor="accent">shopping_cart</mat-icon>
+          </a>
+        </li> -->
+      </ul>
+    </div>
+  </div>
+</nav>

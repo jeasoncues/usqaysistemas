@@ -1,0 +1,177 @@
+<app-navbar [whiteLogo]="true"></app-navbar>
+
+<section class="body">
+
+    <div class="jumbotron-usqay text-white">
+        <div id="particles-js">
+        </div>
+        <div class="content w-100 h-100">
+            <div class="container d-flex py-5">
+                <div class="row w-100">
+                    <div class="col-12 text-center">
+                        <h1 class="display-4">Usqay {{ data?.nombre }}</h1>
+                        <p class="card-text text-light my-4">{{ data?.subtitle }}</p>
+                        <button mat-flat-button color="accent" class="rounded-pill m-1 shadow-lg px-4 py-1" (click)="scroll(tplanes)">Solicitar Ahora</button>
+                        <a *ngIf="data?.flayer" mat-flat-button class="rounded-pill m-1 shadow-lg px-4 py-1" [href]="data?.flayer" target="_blank">Brochure</a>
+                        <!-- <a *ngIf="data?.manual" mat-flat-button class="rounded-pill m-1 shadow-lg px-4 py-1" [href]="data?.manual" target="_blank">Ver Manual</a> -->
+                        <button mat-flat-button class="rounded-pill m-1 shadow-lg px-4 py-1" (click)="scroll(vdemo)">Ver Demo</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="img-container w-100 text-center px-4">
+            <img src="{{data?.img}}" class="img-fluid img-thumbnail rounded" width="900" loading="lazy" alt="Image">
+        </div>
+
+        <div class="curv-img">
+            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1920 238" enable-background="new 0 0 1920 238" xml:space="preserve">
+                <path fill="#ffffff" d="M0,0c0,0,888.955,518.735,1920,0c-0.5,149.535,0,238,0,238H0V0z"></path>
+            </svg>
+        </div>
+    </div>
+
+    <div class="product-features">
+        <div class="container py-5">
+            <h2 class="mt-5 mb-4 text-center text-muted">¿Qué nos diferencia?</h2>
+
+            <!-- <p class="text-muted text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, harum accusamus pariatur consequatur illo explicabo doloribus non itaque quis sit ex consectetur eligendi nihil quas, temporibus quos soluta expedita. Magni.</p> -->
+
+            <div class="row py-5">
+                <div class="col-12 col-md-4 col-lg-3" *ngFor="let item of data?.topFeatures">
+                    <div class="card bg-white border-0 shadow my-3 card-features">
+                        <div class="card-body text-center">
+                            <i-feather class="text-secondary mb-2" [name]="item.icon"></i-feather>
+                            <h6 class="card-title text-uppercase my-3">{{item.title}}</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-video" #vdemo>
+        <div class="container py-5">
+            <h2 class="mt-5 mb-4 text-center text-white">Observa nuestro software en acción</h2>
+            <!-- <p class="text-center text-light px-md-5">
+                Escribir aquí algo....    
+            </p> -->
+            <div class="img-container d-flex align-items-center justify-content-center">
+                <!-- <img src="assets/screen2.png" class="img-fluid bg-transparent" alt="Image"> -->
+                <!-- <button mat-fab color="accent">
+                  <mat-icon>play_arrow</mat-icon>
+                </button> -->
+                <!-- <iframe width="800" height="400" src="https://www.youtube.com/embed/JByDbPn6A1o" frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+                <video [src]="data?.video" class="video-soft" controls></video>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-top-features pb-5">
+        <div class="container pt-5">
+            <div class="row">
+                <div class="col-12 col-md-6 order-2 order-md-1 py-5 py-md-auto">
+                    <img src="{{data?.img2}}" alt="" class="img-fluid rounded shadow-lg">
+                </div>
+                <div class="col-12 col-md-6 pl-md-4 pl-lg-5 order-1 order-md-2">
+                    <h2 class="text-muted">
+                        ¿Aún no estas convencido?
+                    </h2>
+                    <p class="text-muted py-2">
+                        Te comentamos por qué nuestros clientes nos prefieren.
+                    </p>
+
+                    <div class="row text-muted">
+                        <div class="col-12 col-md-2 col-lg-1 d-none d-md-block">
+                            <i-feather name="calendar" class="text-primary"></i-feather>
+                        </div>
+                        <div class="col-12 col-md-11 pl-md-4">
+                            <h4>Soporte 24/7</h4>
+                            <p class="py-2">
+                                Nuestra central telefónica está siempre disponible, además cada sistema tiene un módulo para reportar errores en tiempo real.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="row text-muted">
+                        <div class="col-12 col-md-2 col-lg-1 d-none d-md-block">
+                            <i-feather name="calendar" class="text-primary"></i-feather>
+                        </div>
+                        <div class="col-12 col-md-11 pl-md-4">
+                            <h4>Actualizaciones</h4>
+                            <p class="py-2">
+                                Nunca dejamos olvidados a nuestros clientes, nuestros sistemas se actualizan con nuevas características al menos 2 veces al año.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- <button mat-flat-button color="primary" class="rounded-pill shadow-lg mt-2 px-4 py-1">
+                        Get Started Now
+                    </button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-plans bg-light" #tplanes>
+        <div class="container py-5">
+            <h2 class="mt-5 mb-4 text-center text-muted">Planes</h2>
+            <p class="text-muted text-center">
+                Elige el plan que mas se adecue a tu negocio.
+            </p>
+            <div class="row">
+                <div class="col-12 col-md-4" *ngFor="let item of data?.planes; let i = index">
+                    <div class="card border-0 shadow-lg my-3 mx-1 m-lg-3 card-plan">
+                        <div class="card-body px-md-4 py-5">
+                            <div class="d-flex justify-content-end px-0">
+                                <h4 class="card-title font-weight-normal text-muted price price-old">{{(item.precio + 100) | currency: 'S/ '}}</h4>
+                            </div>
+                            <div class="d-flex justify-content-between px-0">
+                                <h4 class="card-title font-weight-bold">{{ item.nombre }}</h4>
+                                <h4 class="card-title font-weight-normal text-secondary price">{{item.precio | currency: 'S/ '}} mensual</h4>
+                            </div>
+                            <div class="d-flex justify-content-end px-0">
+                                <h4 class="card-title font-weight-normal text-muted price text-ofert">
+                                    ¡Solo Hoy!, {{ cupos[i] > 1 ? 'Quedan ' + cupos[i] + ' cupos' : 'Queda ' + cupos[i] + ' cupo' }}
+                                </h4>
+                            </div>
+
+                            <ul class="list-group list-group-flush pt-4 bg-transparent panel-features">
+                                <li class="list-group-item border-0 py-2 pl-2 bg-transparent" *ngFor="let op of item.opciones">
+                                    <i-feather name="chevron-right" class="text-secondary"></i-feather>
+                                    {{op}}
+                                </li>
+                                <li class="list-group-item border-0 py-2 pl-2 bg-transparent text-secondary">
+                                    Incluye:
+                                </li>
+                                <li class="list-group-item border-0 py-2 pl-2 bg-transparent" *ngFor="let op of item.opciones_incluye">
+                                    <i-feather name="chevron-right" class="text-secondary"></i-feather>
+                                    {{op}}
+                                </li>
+                            </ul>
+
+                            <div class="text-center">
+                                <button mat-flat-button color="primary" class="rounded-pill px-4 py-1 mt-4" routerLink="/contacto">
+                                    <!-- <button mat-flat-button color="primary" class="rounded-pill px-4 py-1 mt-4" (click)="openPay(item)"> -->
+                                    <!-- <button mat-flat-button color="primary" class="rounded-pill px-4 py-1 mt-4" routerLink="/contacto"> -->
+                                    <mat-icon>email</mat-icon>
+                                    Contáctame
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- <div class="container-button-float animate__animated animate__bounce animate__infinite" (click)="scroll(tplanes)">
+    <button mat-flat-button class="rounded-pill px-4 py-1 mt-4" color="accent">
+        <mat-icon>add_shopping_cart</mat-icon>
+        Comprar
+    </button>
+</div> -->
+
+<app-footer></app-footer>

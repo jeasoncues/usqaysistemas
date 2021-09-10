@@ -1,0 +1,136 @@
+<app-navbar [itemsBlue]="true" [limitScroll]="80"></app-navbar>
+
+<section class="body mt-5">
+
+    <!-- <div class="jumbotron-usqay">
+        <div class="content w-100">
+            <div class="container d-flex p-0">
+                <div class="row w-100">
+                    <div class="col-12 text-center">
+                        <h1 class="display-4">Carrito Usqay </h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <div class="productos">
+        <div class="container d-flex py-5">
+            <div class="row w-100">
+                <div class="col-sm-12 col-lg-7">
+                    <div class="d-flex justify-content-between">
+                        <button mat-flat-button class="mt-2 shadow" color="primary" (click)="openCatalogo()">
+                            <mat-icon>add_shopping_cart</mat-icon>
+                            Agregar Equipos
+                        </button>
+                    </div>
+                    <div class="card my-2 shadow-sm" *ngIf="carrito.length == 0">
+                        <div class="card-body text-center">
+                            No tienes productos agregados.
+                        </div>
+                    </div>
+                    <div class="container-item mt-2 shadow-sm p-3" *ngFor="let item of carrito; let i = index;">
+                        <h5>{{item.nombre}}</h5>
+                        <p class="card-left">{{item.descripcion}}</p>
+                        <!-- <div class="d-flex justify-content-between mb-3">
+                            <img class="" [src]="item.imagen">
+                        </div> -->
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h6>{{ item.precio | currency: 'S/ ' }}</h6>
+                            <div>
+                                <button mat-button class="text-secondary" (click)="cambiarCantidad(item, -1)">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                                <!-- <input matInput type="number" class="input-cantidad" [(ngModel)]="item.cantidad" (change)="actualizarTotal()"> -->
+                                <label>{{ item.cantidad }}</label>
+                                <button mat-button class="text-secondary" (click)="cambiarCantidad(item, 1)">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                                <button mat-button class="text-danger" (click)="eliminar(i)">
+                                    <mat-icon>delete</mat-icon>
+                                    Eliminar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-lg-5">
+                    <div class="shadow-sm px-3 py-2">
+                        <div class="text-center pt-2">
+                            <h5>Resumen de la compra</h5>
+                            <hr>
+                        </div>
+
+                        <div class="d-flex justify-content-between mb-3">
+                            <h6>Subtotal</h6>
+                            <h6>{{ subtotal | currency: 'S/ ' }}</h6>
+                        </div>
+                        <div class="d-flex justify-content-between mb-3">
+                            <h6>Descuento <small *ngIf="descuento_cupon">({{descuento_cupon}})</small></h6>
+                            <h6>{{ descuento | currency: 'S/ ' }}</h6>
+                        </div>
+                        <div class="d-flex justify-content-between mb-3">
+                            <h4>Total</h4>
+                            <h4>{{ total | currency: 'S/ ' }}</h4>
+                        </div>
+                        <div>
+                            <mat-form-field appearance="outline" color="accent" class="w-100">
+                                <mat-label>Cupón</mat-label>
+                                <input matInput type="text" [(ngModel)]="value_cupon">
+                                <button mat-button *ngIf="value_cupon" matSuffix mat-icon-button aria-label="Clear" (click)="aplicarCupon()">
+                                    <mat-icon *ngIf="!loading_cupon">check</mat-icon>
+                                    <mat-spinner strokeWidth="3" [diameter]="30" *ngIf="loading_cupon"></mat-spinner>
+                                </button>
+                            </mat-form-field>
+                        </div>
+                        <div>
+                            <mat-form-field appearance="outline" color="accent" class="w-100">
+                                <mat-label>Código Vendedor</mat-label>
+                                <input matInput type="text">
+                            </mat-form-field>
+                        </div>
+                        <div class="d-flex justify-content-between mb-3">
+                            <h6>Email:</h6>
+                            <h6>
+                                {{ datos.email || '--' }}
+                                <i class="fa fa-pencil-alt text-secondary cursor-pointer ml-2" (click)="openFormDatos()"></i>
+                            </h6>
+                        </div>
+                        <div class="d-flex justify-content-between mb-3">
+                            <h6>Ciudad:</h6>
+                            <h6>
+                                {{ datos.ciudad_nombre || '--' }}
+                                <i class="fa fa-pencil-alt text-secondary cursor-pointer ml-2" (click)="openFormDatos()"></i>
+                            </h6>
+                        </div>
+                        <!-- <div>
+                            <mat-form-field appearance=" outline" color="accent" class="w-100">
+                                    <mat-label>Email</mat-label>
+                                    <input matInput type="text">
+                                    </mat-form-field>
+                        </div>
+                        <div>
+                            <mat-form-field appearance="outline" color="accent" class="w-100">
+                                <mat-label>Ciudad</mat-label>
+                                <mat-select [(ngModel)]="id_ciudad">
+                                    <mat-option *ngFor="let ciudad of ciudades" [value]="ciudad.id">{{ciudad.nombre}}</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div> -->
+                        <div class="text-secondary text-right">
+                            * El stock y tiempo de envío depende de la ciudad en que te encuentres.
+                        </div>
+                        <div class="text-right">
+                            <button mat-flat-button color="accent" class="m-1 shadow-lg px-4 py-1 w-100" [disabled]="carrito.length == 0" (click)="openPay()">
+                                <mat-icon>payment</mat-icon>
+                                Pagar Ahora
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<app-footer></app-footer>

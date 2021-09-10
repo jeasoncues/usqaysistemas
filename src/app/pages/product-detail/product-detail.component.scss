@@ -1,0 +1,229 @@
+@import "../../../scss/variables.scss";
+
+.body{
+
+    .jumbotron-usqay{
+        background-color: $blue;
+        min-height: 100vh;
+        position: relative;
+
+        .content{
+            position: absolute;
+            top: 0;
+            padding-top: 8rem;
+        }
+
+        .img-container{
+            position: absolute;
+            top: 30rem;
+            img.rounded{
+                border-radius: 1rem !important;
+                box-shadow: 0px 11px 80px #00000021;
+            }
+            z-index: 1;
+        }
+        
+        .curv-img{
+            position: absolute;
+            width: 100%;
+            bottom: 0px;
+            z-index: 0;
+        }
+    }
+
+    .product-features{
+        padding-top: 0rem;
+
+        i-feather{
+            height: 2rem;
+            width: 2rem;
+        }
+
+    }
+
+    .product-video{
+        min-height: 25rem;
+        background-image: linear-gradient(159deg, rgba(15,75,129,0.9) 0%, rgba(12,59,102,0.83) 35%, rgba(15,75,129,0.9) 100%),
+        url("../../../assets/video-bg.jpg");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        position: relative;
+
+        .img-container{
+            margin-bottom: -17rem;
+
+            button{
+                position: absolute;
+                animation: pulse 1.2s infinite;
+            }
+        }
+    }
+
+    .product-video:after{
+        position: absolute;
+        content: "";
+        left: 0;
+        top: 0;
+        background-image: url("../../../assets/rounded-bg.png");
+        background-size: cover;
+        background-position: top center;
+        background-repeat: no-repeat;
+        height: 247px;
+        width: 100%;
+    }
+
+    .product-top-features{
+        padding-top: 8rem;
+
+        i-feather{
+            height: 2rem;
+            width: 2rem;
+        }
+    }
+
+    .product-plans{
+        min-height: 20rem;
+
+        .card-plan{
+            height: 60rem;
+            min-height: 20rem;
+            transition: all .2s ease-in-out;
+        }
+        .card-plan:hover{
+            // transform: scale(1.10);
+            background-color: $blue;
+            color: #ffffff;
+
+            i-feather{
+                color: #ffffff !important;
+            }
+
+            .price{
+                color: #ffffff !important;
+            }
+
+            button{
+                background-color: $orange;
+            }
+        }
+    }
+
+    .panel-features {
+        min-height: 25rem;
+    }
+
+    .card-features {
+        min-height: 10rem;
+    }
+
+    .video-soft {
+        width: 80%;
+        height: auto;
+    }
+
+    .price-old {
+        text-decoration: line-through;
+        font-size: 16px;
+    }
+
+    .text-ofert {
+        text-align: end;
+        font-size: 12px;
+    }
+    
+}
+
+.container-button-float {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    z-index: 999;
+}
+
+/* Animation */
+@keyframes pulse {
+	0% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba($orange, 0.7);
+	}
+
+	70% {
+		transform: scale(1);
+		box-shadow: 0 0 0 30px rgba($orange, 0);
+	}
+
+	100% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba($orange, 0);
+	}
+}
+
+
+/* Responsive */
+@media (min-width: 768px) {
+    
+    .jumbotron-usqay{
+        .content{
+            top: 0;
+            padding-top: 8rem;
+        }
+
+        .img-container{
+            top: 27rem !important;
+            img.rounded{
+                border-radius: 1rem !important;
+            }
+        }
+        
+        .curv-img{
+            width: 100%;
+            bottom: 0px;
+        }
+    }
+
+    .product-features{
+        padding-top: 17.5rem !important;
+
+        i-feather{
+            height: 2rem;
+            width: 2rem;
+        }
+
+    }
+
+    .product-video{
+        min-height: 35rem;
+
+        .img-container{
+            margin-bottom: -17rem;
+        }
+    }
+
+    .product-video:after{
+        height: 247px;
+        width: 100%;
+    }
+
+    .product-top-features{
+        padding-top: 16rem !important;
+
+        i-feather{
+            height: 2rem;
+            width: 2rem;
+        }
+    }
+
+    .product-plans{
+        min-height: 20rem;
+
+
+        .card-plan{
+            min-height: 20rem;
+        }
+        .card-plan:hover{
+            transform: scale(1.10);
+        }
+    }
+}

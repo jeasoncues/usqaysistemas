@@ -1,0 +1,129 @@
+<app-navbar [whiteLogo]="true"></app-navbar>
+
+<section class="body">
+
+    <div class="jumbotron-usqay text-white">
+        <div id="particles-js">
+        </div>
+        <div class="content w-100 h-100">
+            <div class="container d-flex py-5">
+                <div class="row w-100">
+                    <div class="col-12 text-center">
+                        <h1 class="display-4" *ngIf="data.vads_trans_status != 'ABANDONED' ">¡¡Compra Completada!!</h1>
+                        <h1 class="display-4" *ngIf="data.vads_trans_status == 'ABANDONED' ">¡¡Oh no, Compra Abandonada!!</h1>
+                        <p class="card-text text-light my-4" *ngIf="data.vads_trans_status != 'ABANDONED' ">Bienvenido a la familia Usqay</p>
+
+
+                        <div class="col-8 offset-2">
+
+                            <table class="w-100" *ngIf="data.vads_trans_status != 'ABANDONED' ">
+                                <tr>
+                                    <td class="text-right">Código</td>
+                                    <th>{{ data.vads_order_id }}</th>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">Email</td>
+                                    <th>{{ data.vads_cust_email }}</th>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">Total</td>
+                                    <th>{{ data.vads_effective_amount / 100 | currency: 'S/ ' }} </th>
+                                </tr>
+                                <!-- <tr>
+                                    <td class="text-right">Fecha</td>
+                                    <th>{{  }}</th>
+                                </tr> -->
+                                <tr>
+                                    <td class="text-right">Método de Pago</td>
+                                    <th>{{ data.vads_card_brand }} / {{ data.vads_card_number }}</th>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">Estado</td>
+                                    <th>{{ data.vads_trans_status }}</th>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">Transacción</td>
+                                    <th>{{ data.vads_trans_uuid }}</th>
+                                </tr>
+                            </table>
+
+                        </div>
+
+                        <p class="card-text text-light my-4">
+                            Uno de nuestros asesores de ventas se comunicará con usted a la brevedad posible.
+                        </p>
+
+
+                        <div class="mt-4" *ngIf="data.vads_trans_status != 'ABANDONED' ">
+                            <button mat-flat-button color="accent" class="rounded-pill m-1 shadow-lg px-4 py-1" routerLink="/">Seguir Viendo</button>
+                        </div>
+                        <div class="mt-4" *ngIf="data.vads_trans_status == 'ABANDONED' ">
+                            <button mat-flat-button color="accent" class="rounded-pill m-1 shadow-lg px-4 py-1" routerLink="/cart">Volver a Intentarlo</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="curv-img">
+            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1920 238" enable-background="new 0 0 1920 238" xml:space="preserve">
+                <path fill="#ffffff" d="M0,0c0,0,888.955,518.735,1920,0c-0.5,149.535,0,238,0,238H0V0z"></path>
+            </svg>
+        </div>
+    </div>
+
+    <section class="section-contact-details">
+        <div class="container py-5">
+            <h2 class="my-5 text-center text-muted">Ubícanos</h2>
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <div class="card border-0 my-2 my-md-0 bg-white shadow-sm rounded-0">
+                        <div class="card-body">
+                            <div class="text-center">
+                                <i-feather name="map-pin" class="big my-3"></i-feather>
+                                <h5 class="card-title">Oficina</h5>
+
+                                <p class="card-text my-1">
+                                    Jr. Tácna 258 Of. 1B - Piura.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="card border-0 my-2 my-md-0 bg-white shadow-sm rounded-0">
+                        <div class="card-body">
+                            <div class="text-center">
+                                <i-feather name="mail" class="big my-3"></i-feather>
+                                <h5 class="card-title">Email</h5>
+
+                                <p class="card-text my-1">
+                                    ventas@sistemausqay.com
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="card border-0 my-2 my-md-0 bg-white shadow-sm rounded-0">
+                        <div class="card-body">
+                            <div class="text-center">
+                                <i-feather name="phone" class="big my-3"></i-feather>
+                                <h5 class="card-title">Teléfono</h5>
+
+                                <p class="card-text my-1">
+                                    (01) 642 9247
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+</section>
+
+<app-footer></app-footer>

@@ -1,0 +1,250 @@
+<app-navbar [itemsBlue]="true"></app-navbar>
+
+<div class="section-landing">
+    <!-- <video #videoPlayer autoplay muted loop>
+        <source src="https://res.cloudinary.com/restaurant-pe-v2/video/upload/v1607413343/restaurant_pe_video.fbc9f6ad_103803f205.webm">
+    </video> -->
+    <div class="container text-center">
+        <h1 class="display-4 font-weight-bolder text-primary"> Gestiona y factura en <span class="text-secondary">tiempo récord</span> </h1>
+        <!-- <p class="text-primary">
+           
+        </p> -->
+    </div>
+</div>
+
+<section class="section-core-products bg-white py-5">
+    <div class="container text-center py-5">
+        <h2 class="mb-5">Nuestros Productos</h2>
+        <div class="row my-5">
+            <div class="col-12 col-md-6 my-6 my-md-0">
+                <div class="card bg-transparent border-0 same-height">
+                    <div class="card-body p-4">
+                        <div class="row">
+                            <div class="col-12 text-center mb-2">
+                                <img src="../../../assets/restaurantes-icon-orange.svg" width="70" alt="restaurantes">
+                            </div>
+                            <div class="col-12">
+                                <h4>Usqay Restaurantes</h4>
+                                <p class="card-text py-2">
+                                    Toma pedidos, recíbelos en cocina y maneja tu almacén de una manera sencilla e intuitiva, y con facturación electronica.
+                                </p>
+                                <button mat-flat-button color="primary" class="rounded-pill" routerLink="/product/restaurantes">
+                                    saber mas
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 my-6 my-md-0">
+                <div class="card bg-transparent border-0 same-height">
+                    <div class="card-body p-4">
+                        <div class="row">
+                            <div class="col-12 text-center mb-2">
+                                <img src="../../../assets/pos-icon-orange.svg" width="70" alt="pos">
+                            </div>
+                            <div class="col-12">
+                                <h4>Usqay Pos</h4>
+                                <p class="card-text py-2">
+                                    Lleva un control de tus ventas, compras y cuentas por cobrar y pagar, ademas de gestionar tus almacenes en un solo click, y con facturación electronica.
+                                </p>
+                                <button mat-flat-button color="primary" class="rounded-pill" routerLink="/product/pos">
+                                    saber mas
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="col-12 col-md-4 my-4 my-md-0">
+                <div class="card bg-transparent border-0 same-height">
+                    <div class="card-body p-4">
+                        <div class="row">
+                            <div class="col-12 text-center mb-2">
+                                <img src="../../../assets/hoteles-icon-orange.svg" width="70" alt="hoteles">
+                            </div>
+                            <div class="col-12">
+                                <h4>Usqay Hoteles</h4>
+                                <p class="card-text py-2">
+                                    Registra reservas, maneja tus huéspedes y vende productos y servicios, y emite comprobantes electrónicos.
+                                </p>
+                                <button mat-flat-button color="primary" class="rounded-pill" routerLink="/product/hoteles">
+                                    saber mas
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </div>
+</section>
+
+<section class="section-top-features bg-light">
+    <div class="container py-5">
+        <h2 class="my-5 text-center">¿Por qué nos eligen?</h2>
+        <div class="row">
+            <div class="col-12 col-md-4" *ngFor="let item of porque_nos_eligen">
+                <div class="card-flip my-3">
+                    <div class="card border-0 bg-white feature-card">
+                        <div class="card-body text-center">
+                            <i-feather name="smile" class="big my-3 text-secondary"></i-feather>
+                            <h4 class="card-title text-muted">{{item.nombre}}</h4>
+                        </div>
+                    </div>
+                    <div class="card border-0 bg-white feature-card">
+                        <div class="card-body text-center d-flex align-items-center">
+                            <p class="card-text">
+                                {{item.descripcion}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-our-world bg-light">
+    <div class="container py-5">
+        <div class="row my-0 my-md-5">
+            <div class="col-12 col-md-5">
+                <h2 class="my-4">
+                    Nuestros Clientes
+                    <br>
+                    nos recomiendan
+                </h2>
+                <p class="text-muted">
+                    Tenemos mas de 5 años en el mercado y nuestro equipo mas de una década trabajando en el rubro, nuestro volumen de clientes nos avala.
+                </p>
+                <a mat-flat-button color="primary" class="rounded-pill shadow px-4 py-1" routerLink="/contacto">
+                    Empecemos
+                </a>
+            </div>
+            <div class="col-12 col-md-6 offset-md-1">
+                <div class="d-flex w-100 align-items-center h-100">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="clients-counter card border-0 my-3 shadow-lg bg-primary text-white">
+                                <div class="card-body px-2 py-4 d-flex align-items-center">
+                                    <i-feather name="award" class="big"></i-feather>
+                                    <div class="ml-md-2">
+                                        <h5 class="my-1 font-weight-bold">500+</h5>
+                                        <p class="my-1 small text-uppercase">Negocios Activos</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="clients-counter card border-0 shadow-lg my-3">
+                                <div class="card-body px-3 py-4 d-flex align-items-center">
+                                    <i-feather name="coffee" class="big"></i-feather>
+                                    <div class="ml-md-2">
+                                        <h5 class="my-1 font-weight-bold">350+</h5>
+                                        <p class="my-1 small text-uppercase">Usqay Restaurantes</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="clients-counter card border-0 shadow-lg my-3">
+                                <div class="card-body px-3 py-4 d-flex align-items-center">
+                                    <i-feather name="shopping-bag" class="big"></i-feather>
+                                    <div class="ml-md-2">
+                                        <h5 class="my-1 font-weight-bold">200+</h5>
+                                        <p class="my-1 small text-uppercase">Usqay Pos</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="clients-counter card border-0 shadow-lg my-3">
+                                <div class="card-body px-3 py-4 d-flex align-items-center">
+                                    <i-feather name="bell" class="big"></i-feather>
+                                    <div class="ml-md-2">
+                                        <h5 class="my-1 font-weight-bold">80+</h5>
+                                        <p class="my-1 small text-uppercase">Usqay Hoteles</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-our-clients">
+    <div class="container py-5">
+        <h2 class="my-5 text-center">¿Qué dicen nuestros clientes?</h2>
+        <owl-carousel-o [options]="customOptions">
+            <ng-template carouselSlide *ngFor="let item of clientes">
+                <div class="card border-0 shadow mx-4 my-4">
+                    <div class="card-body text-center px-4">
+                        <p class="card-text font-italic text-muted">
+                            "{{item.content}}"
+                        </p>
+                        <img src="https://picsum.photos/id/1005/500/500" class="rounded-circle avatar mx-auto mb-3">
+                        <h5>{{item.nombre}}</h5>
+                        <p class="small">{{item.negocio}}</p>
+                    </div>
+                </div>
+            </ng-template>
+        </owl-carousel-o>
+    </div>
+</section>
+
+<app-form-contact></app-form-contact>
+
+<section class="section-contact-details">
+    <div class="container py-5">
+        <h2 class="my-5 text-center text-muted">Ubícanos</h2>
+        <div class="row">
+            <div class="col-12 col-md-4">
+                <div class="card border-0 my-2 my-md-0 bg-white shadow-sm rounded-0">
+                    <div class="card-body">
+                        <div class="text-center">
+                            <i-feather name="map-pin" class="big my-3"></i-feather>
+                            <h5 class="card-title">Oficina</h5>
+
+                            <p class="card-text my-1">
+                                Jr. Tácna 258 Of. 1B - Piura.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="card border-0 my-2 my-md-0 bg-white shadow-sm rounded-0">
+                    <div class="card-body">
+                        <div class="text-center">
+                            <i-feather name="mail" class="big my-3"></i-feather>
+                            <h5 class="card-title">Email</h5>
+
+                            <p class="card-text my-1">
+                                ventas@sistemausqay.com
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="card border-0 my-2 my-md-0 bg-white shadow-sm rounded-0">
+                    <div class="card-body">
+                        <div class="text-center">
+                            <i-feather name="phone" class="big my-3"></i-feather>
+                            <h5 class="card-title">Teléfono</h5>
+
+                            <p class="card-text my-1">
+                                (01) 642 9247
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<app-footer></app-footer>

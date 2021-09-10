@@ -1,0 +1,27 @@
+button:focus {
+    outline: none;
+}
+
+input:focus {
+    outline: none;
+}
+
+*:focus {
+    outline: none;
+}
+
+.mat-expansion-panel-spacing{
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+}
+
+.cursor-pointer{
+    cursor: pointer;
+}
+html, body {
+    scroll-behavior: smooth;
+
+    ::-webkit-scrollbar {
+        display: none;
+    }
+}

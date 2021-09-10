@@ -1,0 +1,50 @@
+<h2 mat-dialog-title class="text-center">¡Estás a solo un paso de ser parte de la familia Usqay!</h2>
+<!-- <p class="text-center text-muted">Bienvenido a Usqay</p> -->
+<div class="row py-3">
+    <div class="col-12 col-md-6">
+        <form method="post" action="https://secure.micuentaweb.pe/vads-payment/">
+
+
+            <input *ngFor="let item of data | keyvalue" [name]="item.key" type="hidden" [value]="item.value">
+
+            <div class="row">
+
+                <!-- <div class="col-12">
+                    <mat-form-field appearance="outline" color="accent" class="w-100">
+                        <mat-label>Email</mat-label>
+                        <input matInput type="email" name="vads_cust_email" required [value]="data.email">
+                    </mat-form-field>
+                </div> -->
+
+                <div class="col-12">
+                    <div class="d-flex justify-content-between mb-3">
+                        <h6>Email:</h6>
+                        <h6>
+                            {{ data.vads_cust_email || '--' }}
+                        </h6>
+                    </div>
+                    <div class="d-flex justify-content-between mb-3">
+                        <h6>Total:</h6>
+                        <h6>
+                            {{ data.vads_amount / 100 | currency: 'S/ ' }}
+                        </h6>
+                    </div>
+                </div>
+
+                <div class="col-12 text-center">
+                    <button mat-flat-button class="rounded-pill btn-submit" color="accent">
+                        <mat-icon>payment</mat-icon>
+                        Pagar Ahora
+                    </button>
+
+                    <!-- <div class="mt-4" (click)="aun()">
+                        <a>¿Aún no estas convencido?</a>
+                    </div> -->
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="col-12 col-md-6 d-none d-md-flex align-items-center justify-content-center">
+        <img src="assets/mail-2.svg" alt="Mail" width="300">
+    </div>
+</div>

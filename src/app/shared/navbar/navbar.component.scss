@@ -1,0 +1,30 @@
+.navbar-collapse.show, .navbar-collapsing {
+    // background: rgb(243, 243, 243);
+    // padding: 1em;
+}
+
+.nav-item {
+    .text-subrayado {
+        border-bottom: 2px solid #EF6A01;
+    }
+}
+
+.fixed-top {
+    z-index: 999;
+}
+
+.soporte-menu {
+    min-width: 350px;
+    max-width: 380px;
+}
+
+a.dropdown-item i {
+    margin-right: 15px;
+}
+
+@media (max-width: 992px) {
+    .soporte-menu {
+        max-height: 400px;
+        overflow-y: auto;
+    }
+}

@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300&display=swap');
+
+
+$nunito-typography: mat-typography-config(
+  // $font-family: 'Titillium Web, sans-serif',
+  $font-family: 'Montserrat, sans-serif',
+  // $font-family: 'Comfortaa, cursive',
+);
+
+@include angular-material-typography($nunito-typography);
+body { margin: 0; font-family: 'Montserrat', sans-serif; }
